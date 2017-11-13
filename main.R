@@ -1,11 +1,5 @@
-##############################################
-## KAGGLE Grocery Sale Demand Prediction #####
-##############################################
-
 setwd("D:/kaggle/grocery_sale")
-raw.train <- read.csv("train.csv", header=T, nrows=10**8,
-                      colClasses = c("integer", "Date", "integer", "integer", "numeric", "logical"), 
-                      col.names = c("id", "date", "store_nbr", "item_nbr", "unit_sales", "onpromotion"))
+raw.train <- read.csv("train.csv", header=T)
 raw.test <- read.csv("test.csv", header=T, 
                      colClasses = c("integer", "Date", "integer", "integer", "logical"), 
                      col.names = c("id", "date", "store_nbr", "item_nbr", "onpromotion"))
@@ -27,6 +21,6 @@ raw.transactions <- read.csv("transactions.csv", header=T,
 
 
 library("dplyr")
-mydat <- raw.train %>% 
-  filter(raw.train, )
-
+mydat <- raw.train[(nrow(raw.train)-10**6):nrow(raw.train), ] %>% 
+  mutate(date = as.Date(date, format="%Y-%m-%d")) %>%
+  filter(., date >= 2017-08-01)
