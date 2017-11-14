@@ -1,0 +1,38 @@
+train.csv (size = 125497040)
+  date (Date Format): 2013-01-01 to 2017-08-15
+  store (categories): 1 to 54 
+  item (category): 4036 categories
+  promotion (category, has NA): Yes(6%) / No(77%) / NA(17%)
+  unit_sales (integer): Min=-15372, Q1=2, Median=4, Mean=8.55, Q3=9, Max=89440  
+  
+test.csv (size = 3370464)
+  date (Date Format): 2017-08-16 to 2017-08-31
+  store (category): 1 to 54
+  item (category, some are not in train): 3901 categories
+  promotion (category): Yes(6%) / No(94%)
+  
+store.csv (size = 54)
+  city (category): 22 categories
+  state (category): 16 categories
+  type (category): A, B, C, D, E
+  cluster (category): 1 to 17
+  
+item.csv (size = 4100)
+  family (category): 33 categories
+  class (category): 337 categories
+  perishable (category): 0(76%) / 1(24%)
+  
+oil.csv (size = 1218)
+  oil_price (continuous): 26.19 to 110.62 /w 43 NA's
+
+holiday.csv (size = 350)
+  type (category): 6
+  local (category): local / national / regional
+  local_name (category): 24 categories
+
+transaction.csv (size = 83488)
+  transactions (continuous): 5 to 8359
+  
+Note: 
+  1. Wages paid every 15th and on the last day of the month.
+  2. A magnitude 7.8 earthquake struck Ecuador on April 16, 2016.
